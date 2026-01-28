@@ -1,34 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Internship Logbook</title>
-    <style>
-        body { font-family: Arial; max-width: 800px; margin: 50px auto; padding: 20px; }
-        h1 { color: #333; }
-        .entry { border: 1px solid #ddd; padding: 15px; margin: 15px 0; }
-        .date { color: #666; font-size: 0.9em; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Logbook</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Internship Logbook</h1>
-    
-    <div class="entry">
-        <h2>Day 1 - January 28, 2025</h2>
-        <p><strong>Duties:</strong></p>
-        <ul>
-            <li>Onboarded to team</li>
-            <li>Set up development environment</li>
-            <li>Reviewed documentation</li>
-        </ul>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h3>Months</h3>
+        </div>
+        <nav class="sidebar-nav" id="sidebarNav">
+            <!-- Month buttons will be generated here by JavaScript -->
+        </nav>
+    </aside>
+
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>Internship Logbook</h1>
+                <p class="subtitle">Track your daily duties and progress</p>
+                <p class="date-range">October 6, 2025 — April 10, 2026</p>
+            </div>
+        </header>
+
+        <nav class="month-nav">
+            <button class="nav-btn" id="prevBtn">← Previous</button>
+            <span class="current-month" id="currentMonth">October 2025</span>
+            <button class="nav-btn" id="nextBtn">Next →</button>
+        </nav>
+
+        <main id="logbookContainer">
+            <!-- Months and entries will be generated here by JavaScript -->
+        </main>
     </div>
-    
-    <div class="entry">
-        <h2>Day 2 - January 29, 2025</h2>
-        <p><strong>Duties:</strong></p>
-        <ul>
-            <li>Attended team meetings</li>
-            <li>Started first task</li>
-        </ul>
-    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
