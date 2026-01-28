@@ -1,0 +1,507 @@
+/* ============================================
+   INTERNSHIP LOGBOOK - STYLES
+   Muted, calming aesthetic with refined typography
+   ============================================ */
+
+:root {
+    /* Muted, warm earth tones */
+    --bg-primary: #f5f3f0;
+    --bg-secondary: #ede9e4;
+    --bg-tertiary: #e5dcd4;
+    
+    /* Soft, muted text colors */
+    --text-dark: #5a514a;
+    --text-medium: #7a6f68;
+    --text-light: #9a8f88;
+    
+    /* Muted accent colors */
+    --accent-primary: #a89080;
+    --accent-secondary: #8b9fa6;
+    --accent-tertiary: #9a8fa0;
+    
+    /* Borders and dividers */
+    --border-light: #d9cfc6;
+    --border-medium: #c9bfb6;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Transitions */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', 'Trebuchet MS', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    display: flex;
+}
+
+/* ============================================
+   CONTAINER & LAYOUT
+   ============================================ */
+
+.sidebar {
+    width: 220px;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-light);
+    padding: var(--spacing-lg);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-header {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--accent-primary);
+}
+
+.sidebar-header h3 {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.month-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-medium);
+    color: var(--text-dark);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+    text-align: left;
+    white-space: nowrap;
+}
+
+.month-btn:hover {
+    background-color: var(--bg-tertiary);
+    border-color: var(--accent-primary);
+}
+
+.month-btn.active {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    border-color: var(--accent-primary);
+    box-shadow: 0 2px 6px rgba(168, 144, 128, 0.3);
+}
+
+.container {
+    flex: 1;
+    margin-left: 220px;
+    max-width: 100%;
+    padding: var(--spacing-lg);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg) var(--spacing-md);
+    background: linear-gradient(135deg, #ede9e4 0%, #e5dcd4 100%);
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    animation: slideInDown 0.6s ease-out;
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--text-medium);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 400;
+}
+
+.date-range {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+.month-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-md);
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+}
+
+.nav-btn {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-medium);
+    color: var(--text-dark);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-btn:hover {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    border-color: var(--accent-primary);
+}
+
+.nav-btn:active {
+    transform: scale(0.98);
+}
+
+.current-month {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    min-width: 180px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   MONTH SECTION
+   ============================================ */
+
+.month-section {
+    margin-bottom: var(--spacing-xl);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.month-title {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--accent-primary);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   DAILY ENTRY
+   ============================================ */
+
+.daily-entry {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    transition: var(--transition);
+}
+
+.daily-entry:hover {
+    border-color: var(--accent-primary);
+    background-color: #f0ebe6;
+    box-shadow: 0 4px 12px rgba(168, 144, 128, 0.08);
+}
+
+.date-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.date-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    letter-spacing: 0.3px;
+}
+
+.day-of-week {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.duty-input-group {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.duty-input {
+    flex: 1;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-medium);
+    border-radius: 6px;
+    background-color: var(--bg-primary);
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.duty-input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(168, 144, 128, 0.1);
+}
+
+.add-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--accent-secondary);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.add-btn:hover {
+    background-color: var(--accent-tertiary);
+    transform: translateY(-2px);
+}
+
+.add-btn:active {
+    transform: translateY(0);
+}
+
+/* ============================================
+   DUTIES LIST
+   ============================================ */
+
+.duties-list {
+    margin-top: var(--spacing-md);
+}
+
+.duty-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm);
+    background-color: var(--bg-primary);
+    border-left: 3px solid var(--accent-secondary);
+    border-radius: 4px;
+    margin-bottom: var(--spacing-xs);
+    animation: slideInLeft 0.3s ease-out;
+}
+
+.duty-text {
+    color: var(--text-dark);
+    flex: 1;
+    word-break: break-word;
+}
+
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: var(--spacing-xs);
+    transition: var(--transition);
+    line-height: 1;
+}
+
+.delete-btn:hover {
+    color: var(--accent-primary);
+    transform: scale(1.2);
+}
+
+.empty-message {
+    color: var(--text-light);
+    font-style: italic;
+    padding: var(--spacing-sm);
+    text-align: center;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+        padding: var(--spacing-md);
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        gap: var(--spacing-sm);
+        overflow-x: auto;
+        padding-bottom: var(--spacing-sm);
+    }
+
+    .month-btn {
+        flex-shrink: 0;
+    }
+
+    .container {
+        margin-left: 0;
+        padding: var(--spacing-md);
+    }
+
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .month-nav {
+        gap: var(--spacing-md);
+        flex-direction: column;
+    }
+
+    .nav-btn {
+        width: 100%;
+    }
+
+    .current-month {
+        min-width: auto;
+    }
+
+    .month-title {
+        font-size: 1.4rem;
+    }
+
+    .date-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+
+    .duty-input-group {
+        flex-direction: column;
+    }
+
+    .add-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        padding: var(--spacing-sm);
+    }
+
+    .sidebar-header h3 {
+        font-size: 1rem;
+    }
+
+    .month-btn {
+        font-size: 0.85rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .header-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .month-title {
+        font-size: 1.2rem;
+    }
+
+    .daily-entry {
+        padding: var(--spacing-sm);
+    }
+
+    .date-label {
+        font-size: 1rem;
+    }
+
+    .duty-input {
+        font-size: 0.9rem;
+    }
+}
